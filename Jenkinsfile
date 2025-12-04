@@ -19,6 +19,8 @@ pipeline {
     }
     stage('Docker build'){
       steps {
+        whoami
+        docker --version
         sh "docker build . -t ${IMAGE_NAME}:${IMAGE_TAG}"
       }
     }
