@@ -4,7 +4,7 @@ pipeline {
   environment {
     IMAGE_NAME = "docker8098/test"
     IMAGE_TAG = "v${BUILD_NUMBER}"
-    PROD_SERVER = "devops@98.81.86.76"
+    PROD_SERVER = "devops@34.228.79.61"
   }
   stages{
     stage('checkout') {
