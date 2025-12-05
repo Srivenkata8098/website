@@ -27,7 +27,7 @@ pipeline {
       }
     }
     stage('docker push') {
-      when { branch 'main'}
+      when { branch 'master'}
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
           sh """
@@ -39,7 +39,7 @@ pipeline {
       }
     }
     stage('Prod Deployment') {
-      when { branch 'main' }
+      when { branch 'master' }
       steps {
         sshagent(credentials: ['prod-server-ssh']) {
           sh """
